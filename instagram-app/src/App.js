@@ -23,3 +23,5 @@ class App extends Component {
 const ComponentFromWithAuthenticate = withAuthenticate(PostPage)(LoginPage);
 
 export default App;
+
+//Final change for commit
