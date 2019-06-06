@@ -1,6 +1,7 @@
 import React from 'react';
+import { FaRegHeart, FaComment } from 'react-icons/fa';
 
-const LikeSection = props => {
+const IconSection = props => {
   return [
     <div
       className="post-icon-section"
@@ -8,10 +9,10 @@ const LikeSection = props => {
       onClick={props.incrementLike}
     >
       <div className="post-icon-wrapper">
-        <i className="far fa-heart" />
+        <FaRegHeart />
       </div>
       <div className="post-icon-wrapper">
-        <i className="far fa-comment" />
+        <FaComment />
       </div>
     </div>,
     <div className="post-icon-section" key="likes-container">
@@ -20,4 +21,4 @@ const LikeSection = props => {
   ];
 };
 
-export default LikeSection;
+export default IconSection;

@@ -39,3 +39,11 @@
    font-size: 1.2rem;
    font-weight: bold;
  }
+
+ .post-icon-section {
+  display: flex;
+ }
+
+ .post-icon-wrapper {
+   margin-left: 15px;
+ }
