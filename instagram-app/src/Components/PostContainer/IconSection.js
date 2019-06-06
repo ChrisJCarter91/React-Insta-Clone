@@ -1,23 +1,33 @@
 import React from 'react';
+import { FaRegHeart, FaComment } from 'react-icons/fa';
+import styled from 'styled-components';
 
-const LikeSection = props => {
+const StyledIconSection = styled.div`
+display: flex;
+flex-direction: row;
+`;
+
+const StyledPostIconWrapper = styled.div`
+margin-left: 15px;
+`;
+
+const IconSection = props => {
   return [
-    <div
-      className="post-icon-section"
+    <StyledIconSection
       key="post-icons-container"
       onClick={props.incrementLike}
     >
-      <div className="post-icon-wrapper">
-        <i className="far fa-heart" />
-      </div>
-      <div className="post-icon-wrapper">
-        <i className="far fa-comment" />
-      </div>
-    </div>,
-    <div className="post-icon-section" key="likes-container">
+      <StyledPostIconWrapper>
+        <FaRegHeart />
+      </StyledPostIconWrapper>
+      <StyledPostIconWrapper>
+        <FaComment />
+      </StyledPostIconWrapper>
+    </StyledIconSection>,
+    <StyledIconSection key="likes-container">
       <div className="post-icon-wrapper">{props.likes}</div>
-    </div>
+    </StyledIconSection>
   ];
 };
 
-export default LikeSection;
+export default IconSection;
