@@ -3,8 +3,21 @@ import CommentSection from '../CommentSection/CommentSectionContainer';
 import PostHeader from './PostHeader';
 import IconSection from './IconSection';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import './Posts.css';
+
+const StyledPostBorder = styled.div`
+border: 1px solid #d3d3d3;
+margin: 5px 0;
+box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+`;
+
+const StyledPostImgWrapper = styled.div`
+height: 100%;
+width: 100%;
+margin-bottom: 20px;
+`;
 
 class Post extends React.Component {
   constructor(props) {
@@ -19,18 +32,18 @@ class Post extends React.Component {
   };
   render() {
     return (
-      <div className="post-border">
+      <StyledPostBorder>
         <PostHeader
           username={this.props.post.username}
           thumbnailUrl={this.props.post.thumbnailUrl}
         />
-        <div className="post-image-wrapper">
+        <StyledPostImgWrapper>
           <img
             alt="post thumbnail"
             className="post-image"
             src={this.props.post.imageUrl}
           />
-        </div>
+        </StyledPostImgWrapper>
         <IconSection
           incrementLike={this.incrementLike}
           likes={this.state.likes}
@@ -39,7 +52,7 @@ class Post extends React.Component {
           postId={this.props.post.imageUrl}
           comments={this.props.post.comments}
         />
-      </div>
+      </StyledPostBorder>
     );
   }
 }
